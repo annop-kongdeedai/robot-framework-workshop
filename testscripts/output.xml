@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191027 16:56:11.892" rpa="false">
+<suite id="s1" name="Testscripts" source="C:\Users\TEST\Desktop\robot-framework-workshop\robot-framework-workshop-day1\testscripts">
+<suite id="s1-s1" name="Demo Resouce File" source="C:\Users\TEST\Desktop\robot-framework-workshop\robot-framework-workshop-day1\testscripts\demo_resouce_file.robot">
+<kw name="Ecommerce suit setup" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:12.148" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20191027 16:56:12.147" endtime="20191027 16:56:24.758"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20191027 16:56:24.759" endtime="20191027 16:56:25.902"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:12.147" endtime="20191027 16:56:25.902"></status>
+</kw>
+<test id="s1-s1-t1" name="TEST IMPORT SELENIUM RESOURCE FILE">
+<kw name="Ecommerce test setup" library="common" type="setup">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20191027 16:56:25.904" endtime="20191027 16:56:25.913"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:25.913" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20191027 16:56:25.913" endtime="20191027 16:56:29.360"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:25.903" endtime="20191027 16:56:29.360"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:contact-link</arg>
+</arguments>
+<assign>
+<var>${contactLink}</var>
+</assign>
+<msg timestamp="20191027 16:56:29.392" level="INFO">${contactLink} = Contact us</msg>
+<status status="PASS" starttime="20191027 16:56:29.361" endtime="20191027 16:56:29.392"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${contactLink}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:29.392" level="INFO">Contact us</msg>
+<status status="PASS" starttime="20191027 16:56:29.392" endtime="20191027 16:56:29.392"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:25.902" endtime="20191027 16:56:29.392" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="DEMO PAGE RESOURCE">
+<kw name="Ecommerce test setup" library="common" type="setup">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20191027 16:56:29.395" endtime="20191027 16:56:29.404"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:29.405" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20191027 16:56:29.405" endtime="20191027 16:56:31.800"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:29.394" endtime="20191027 16:56:31.800"></status>
+</kw>
+<kw name="Add product to shopping cart" library="homepage">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>css:ul#homefeatured a[data-id-product="${product_id}"]</arg>
+</arguments>
+<assign>
+<var>${addToCartButton}</var>
+</assign>
+<msg timestamp="20191027 16:56:31.801" level="INFO">${addToCartButton} = css:ul#homefeatured a[data-id-product="1"]</msg>
+<status status="PASS" starttime="20191027 16:56:31.801" endtime="20191027 16:56:31.801"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>xpath:(//div[@class="product-image-container"])[${product_id}]</arg>
+</arguments>
+<msg timestamp="20191027 16:56:31.801" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class="product-image-container"])[1]'.</msg>
+<status status="PASS" starttime="20191027 16:56:31.801" endtime="20191027 16:56:32.348"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${addToCartButton}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:32.349" level="INFO">Clicking element 'css:ul#homefeatured a[data-id-product="1"]'.</msg>
+<status status="PASS" starttime="20191027 16:56:32.349" endtime="20191027 16:56:32.452"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:31.800" endtime="20191027 16:56:32.452"></status>
+</kw>
+<kw name="Checkout_product" library="homepage">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>css:a[title="Proceed to checkout"]</arg>
+</arguments>
+<assign>
+<var>${processToCheckoutLink}</var>
+</assign>
+<msg timestamp="20191027 16:56:32.453" level="INFO">${processToCheckoutLink} = css:a[title="Proceed to checkout"]</msg>
+<status status="PASS" starttime="20191027 16:56:32.453" endtime="20191027 16:56:32.453"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${processToCheckoutLink}</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:32.453" endtime="20191027 16:56:33.718"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${processToCheckoutLink}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:33.718" level="INFO">Clicking link 'css:a[title="Proceed to checkout"]'.</msg>
+<status status="PASS" starttime="20191027 16:56:33.718" endtime="20191027 16:56:36.575"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:32.453" endtime="20191027 16:56:36.575"></status>
+</kw>
+<kw name="Wait unti page load success" library="checkoutsummarypage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Shopping-cart summary</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.576" endtime="20191027 16:56:36.596"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:36.576" endtime="20191027 16:56:36.597"></status>
+</kw>
+<kw name="Verify total product price" library="checkoutsummarypage">
+<arguments>
+<arg>16.51</arg>
+</arguments>
+<kw name="Total products price" library="checkoutsummarypage">
+<assign>
+<var>${totalProductsPrice}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_product</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_product</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.598" endtime="20191027 16:56:36.633"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.633" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.598" endtime="20191027 16:56:36.633"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.633" level="INFO">${totalProductsPrice} = $16.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.598" endtime="20191027 16:56:36.633"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>$${verifyingProductPrice}</arg>
+<arg>${totalProductsPrice}</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.634" endtime="20191027 16:56:36.634"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:36.597" endtime="20191027 16:56:36.634"></status>
+</kw>
+<kw name="Verify shipping fee" library="checkoutsummarypage">
+<arguments>
+<arg>2.00</arg>
+</arguments>
+<kw name="Total shipping price" library="checkoutsummarypage">
+<assign>
+<var>${totalShippingPrice}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_shipping</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_shipping</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.635" endtime="20191027 16:56:36.661"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.661" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.635" endtime="20191027 16:56:36.662"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.662" level="INFO">${totalShippingPrice} = $2.00</msg>
+<status status="PASS" starttime="20191027 16:56:36.635" endtime="20191027 16:56:36.662"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>$${verifyingShippingFee}</arg>
+<arg>${totalShippingPrice}</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.662" endtime="20191027 16:56:36.663"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:36.635" endtime="20191027 16:56:36.663"></status>
+</kw>
+<kw name="Verify total price" library="checkoutsummarypage">
+<kw name="Total products price" library="checkoutsummarypage">
+<assign>
+<var>${totalProductsPrice}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_product</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_product</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.664" endtime="20191027 16:56:36.683"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.684" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.664" endtime="20191027 16:56:36.684"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.684" level="INFO">${totalProductsPrice} = $16.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.664" endtime="20191027 16:56:36.684"></status>
+</kw>
+<kw name="Total shipping price" library="checkoutsummarypage">
+<assign>
+<var>${totalShippingPrice}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_shipping</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_shipping</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.685" endtime="20191027 16:56:36.702"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.702" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.684" endtime="20191027 16:56:36.702"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.702" level="INFO">${totalShippingPrice} = $2.00</msg>
+<status status="PASS" starttime="20191027 16:56:36.684" endtime="20191027 16:56:36.702"></status>
+</kw>
+<kw name="Total price without tax" library="checkoutsummarypage">
+<assign>
+<var>${totalPriceWithoutText}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_price_without_tax</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_price_without_tax</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.703" endtime="20191027 16:56:36.728"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.728" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.703" endtime="20191027 16:56:36.728"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.728" level="INFO">${totalPriceWithoutText} = $18.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.703" endtime="20191027 16:56:36.728"></status>
+</kw>
+<kw name="Total tax" library="checkoutsummarypage">
+<assign>
+<var>${totalTax}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_tax</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_tax</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.729" endtime="20191027 16:56:36.757"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.757" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.729" endtime="20191027 16:56:36.757"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.757" level="INFO">${totalTax} = $0.00</msg>
+<status status="PASS" starttime="20191027 16:56:36.729" endtime="20191027 16:56:36.758"></status>
+</kw>
+<kw name="Total price with tax" library="checkoutsummarypage">
+<assign>
+<var>${totalPriceWithTax}</var>
+</assign>
+<kw name="Run Keyword And Return" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>Get Text</arg>
+<arg>id:total_price</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:total_price</arg>
+</arguments>
+<status status="PASS" starttime="20191027 16:56:36.758" endtime="20191027 16:56:36.786"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.786" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20191027 16:56:36.758" endtime="20191027 16:56:36.786"></status>
+</kw>
+<msg timestamp="20191027 16:56:36.786" level="INFO">${totalPriceWithTax} = $18.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.758" endtime="20191027 16:56:36.786"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${totalProductsPrice}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${totalProductsPriceRemoveDollar}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.787" level="INFO">${totalProductsPriceRemoveDollar} = 16.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.787" endtime="20191027 16:56:36.787"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${totalShippingPrice}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${totalShippingPriceRemoveDollar}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.787" level="INFO">${totalShippingPriceRemoveDollar} = 2.00</msg>
+<status status="PASS" starttime="20191027 16:56:36.787" endtime="20191027 16:56:36.787"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${totalPriceWithoutText}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${totalPriceWithoutTextRemoveDollar}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.788" level="INFO">${totalPriceWithoutTextRemoveDollar} = 18.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.788" endtime="20191027 16:56:36.788"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${totalTax}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${totalTaxRemoveDollar}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.788" level="INFO">${totalTaxRemoveDollar} = 0.00</msg>
+<status status="PASS" starttime="20191027 16:56:36.788" endtime="20191027 16:56:36.788"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${totalPriceWithTax}</arg>
+<arg>$</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${totalPriceWithTaxRemoveDollar}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.789" level="INFO">${totalPriceWithTaxRemoveDollar} = 18.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.788" endtime="20191027 16:56:36.789"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${totalProductsPriceRemoveDollar}+${totalShippingPriceRemoveDollar}</arg>
+</arguments>
+<assign>
+<var>${totalPriceWithoutTaxCalculate}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.789" level="INFO">${totalPriceWithoutTaxCalculate} = 18.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.789" endtime="20191027 16:56:36.789"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${totalPriceWithoutTextRemoveDollar}</arg>
+<arg>${totalPriceWithoutTaxCalculate}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:36.789" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'float'&gt;</msg>
+<status status="PASS" starttime="20191027 16:56:36.789" endtime="20191027 16:56:36.789"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${totalPriceWithoutTextRemoveDollar}+${totalTaxRemoveDollar}</arg>
+</arguments>
+<assign>
+<var>${totalPriceWithTaxCalculate}</var>
+</assign>
+<msg timestamp="20191027 16:56:36.790" level="INFO">${totalPriceWithTaxCalculate} = 18.51</msg>
+<status status="PASS" starttime="20191027 16:56:36.790" endtime="20191027 16:56:36.790"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${totalPriceWithTaxRemoveDollar}</arg>
+<arg>${totalPriceWithTaxCalculate}</arg>
+</arguments>
+<msg timestamp="20191027 16:56:36.790" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'float'&gt;</msg>
+<status status="PASS" starttime="20191027 16:56:36.790" endtime="20191027 16:56:36.790"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:36.663" endtime="20191027 16:56:36.790"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:29.393" endtime="20191027 16:56:36.791" critical="yes"></status>
+</test>
+<kw name="Ecommerce suit teardown" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20191027 16:56:36.793" endtime="20191027 16:56:38.977"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:36.793" endtime="20191027 16:56:38.977"></status>
+</kw>
+<status status="PASS" starttime="20191027 16:56:11.922" endtime="20191027 16:56:38.978"></status>
+</suite>
+<status status="PASS" starttime="20191027 16:56:11.894" endtime="20191027 16:56:38.991"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Testscripts">Testscripts</stat>
+<stat pass="2" fail="0" id="s1-s1" name="Demo Resouce File">Testscripts.Demo Resouce File</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

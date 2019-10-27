@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191027 17:04:22.086" rpa="false">
+<suite id="s1" name="Robot-Framework-Workshop-Day1" source="C:\Users\TEST\Desktop\robot-framework-workshop\robot-framework-workshop-day1">
+<suite id="s1-s1" name="Testscripts" source="C:\Users\TEST\Desktop\robot-framework-workshop\robot-framework-workshop-day1\testscripts">
+<suite id="s1-s1-s1" name="Demo Resouce File" source="C:\Users\TEST\Desktop\robot-framework-workshop\robot-framework-workshop-day1\testscripts\demo_resouce_file.robot">
+<kw name="Ecommerce suit setup" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191027 17:04:22.307" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" starttime="20191027 17:04:24.739" endtime="20191027 17:04:25.696"></status>
+</kw>
+<msg timestamp="20191027 17:04:25.696" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg timestamp="20191027 17:04:25.705" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=78.0.3904.70)
+</msg>
+<status status="FAIL" starttime="20191027 17:04:22.307" endtime="20191027 17:04:25.705"></status>
+</kw>
+<status status="FAIL" starttime="20191027 17:04:22.307" endtime="20191027 17:04:25.706"></status>
+</kw>
+<test id="s1-s1-s1-t1" name="TEST IMPORT SELENIUM RESOURCE FILE">
+<status status="FAIL" starttime="20191027 17:04:25.706" endtime="20191027 17:04:25.708" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=78.0.3904.70)
+</status>
+</test>
+<test id="s1-s1-s1-t2" name="DEMO PAGE RESOURCE">
+<status status="FAIL" starttime="20191027 17:04:25.714" endtime="20191027 17:04:25.715" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=78.0.3904.70)
+</status>
+</test>
+<kw name="Ecommerce suit teardown" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<errors>
+<msg timestamp="20191027 17:04:25.696" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg timestamp="20191027 17:04:27.736" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>
